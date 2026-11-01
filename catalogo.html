@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo - Techno Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a class="logo" href="index.html">
+        <span class="logo-icone">TS</span>
+        <span>
+          <strong>TECHNO STORE</strong>
+          <small>PARA VOCÊ, O MELHOR</small>
+        </span>
+      </a>
+      <form class="busca" onsubmit="return false">
+        <input type="text" placeholder="Buscar processadores, placas de vídeo, notebooks e periféricos...">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="topo-acoes">
+        <a class="carrinho" href="#"><i class="fa-solid fa-cart-shopping"></i> Carrinho <span class="contador" id="contador-carrinho">0</span></a>
+        <a class="usuario" href="login.html">
+          <span class="avatar">C</span>
+          <span>Olá, Cristiana<br><strong>Minha Conta</strong></span>
+        </a>
+      </div>
+    </div>
+    <nav class="container menu">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Computadores &amp; Notebooks</a>
+      <a href="catalogo.html">Peças &amp; Hardware</a>
+      <a href="catalogo.html">Periféricos</a>
+      <a href="catalogo.html">Promoções &amp; Ofertas <span class="selo selo-vermelho oferta">OFERTAS</span></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="catalogo-titulo">
+      <h1>Hardware &amp; Peças de Alta Performance</h1>
+      <span>48 produtos encontrados</span>
+    </div>
+
+    <div class="catalogo">
+      <aside class="filtros">
+        <div class="filtros-topo">
+          <span>Filtrar Catálogo</span>
+          <button id="limpar-filtros">Limpar</button>
+        </div>
+
+        <div class="grupo">
+          <h4>Categorias</h4>
+          <label><input type="checkbox"> Computadores</label>
+          <label><input type="checkbox"> Notebooks</label>
+        </div>
+
+        <div class="grupo">
+          <h4>Peças de Hardware</h4>
+          <label><input type="checkbox" checked> Processadores</label>
+          <label><input type="checkbox" checked> Placas de Vídeo</label>
+          <label><input type="checkbox" checked> Memória RAM</label>
+          <label><input type="checkbox" checked> Armazenamento</label>
+          <label><input type="checkbox" checked> Placas-mãe</label>
+          <label><input type="checkbox" checked> Fontes de Alimentação</label>
+          <label><input type="checkbox"> Coolers</label>
+          <label><input type="checkbox"> Fans</label>
+          <label><input type="checkbox"> Gabinetes</label>
+        </div>
+
+        <div class="grupo">
+          <h4>Periféricos</h4>
+          <label><input type="checkbox"> Monitores</label>
+          <label><input type="checkbox"> Mouses</label>
+          <label><input type="checkbox"> Teclados</label>
+          <label><input type="checkbox"> Headsets</label>
+          <label><input type="checkbox"> Caixas de Som</label>
+          <label><input type="checkbox"> Cadeiras</label>
+        </div>
+
+        <div class="grupo">
+          <h4>Outros</h4>
+          <label><input type="checkbox"> Cabos</label>
+          <label><input type="checkbox"> Pasta Térmica</label>
+          <label><input type="checkbox"> Outros</label>
+        </div>
+
+        <div class="grupo">
+          <h4>Faixa de Preço (R$)</h4>
+          <div class="preco-faixa">
+            <input type="text" value="R$ 200">
+            <span>-</span>
+            <input type="text" value="R$ 8.000">
+          </div>
+        </div>
+
+        <div class="grupo">
+          <h4>Fabricante / Marca</h4>
+          <label><input type="checkbox" checked> NVIDIA GeForce</label>
+          <label><input type="checkbox" checked> ASUS ROG / TUF</label>
+          <label><input type="checkbox"> AMD Ryzen &amp; Radeon</label>
+          <label><input type="checkbox"> Corsair Gaming</label>
+          <label><input type="checkbox"> Kingston FURY</label>
+          <label><input type="checkbox"> Gigabyte AORUS</label>
+          <label><input type="checkbox"> Intel</label>
+          <label><input type="checkbox"> Pichau</label>
+        </div>
+
+        <div class="grupo">
+          <h4>Disponibilidade</h4>
+          <label><input type="checkbox" checked> Frete Grátis</label>
+          <label><input type="checkbox"> Entrega Rápida</label>
+          <label><input type="checkbox"> Em Estoque</label>
+          <label><input type="checkbox"> Usado</label>
+        </div>
+
+        <button class="botao botao-azul" id="aplicar-filtros">Aplicar Filtros (48)</button>
+      </aside>
+
+      <section>
+        <div class="barra-ordem">
+          <div>
+            Ordenar por:
+            <select id="ordem">
+              <option value="popular">Mais Populares &amp; Relevantes</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+            </select>
+          </div>
+          <span>Exibindo 1-6 de 48</span>
+        <!--  <div class="barra-visao">
+            <button id="ver-grade" class="ativo">Grade</button>
+            <button id="ver-lista">Lista</button>
+          </div> -->
+        </div>
+
+        <div class="grade-catalogo" id="grade-catalogo">
+          <article class="card" data-preco="5354.15" data-ordem="1">
+            <div class="card-selos">
+              <span class="selo selo-vermelho">15% OFF</span>
+              <span class="selo selo-verde">Frete Grátis</span>
+            </div>
+            <button class="favorito">Favoritar</button>
+            <div class="imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQWc41G445RJ0vmTlZcCUZctfqBrZKe8WauanuJgnMw&s=10" alt="Placa de vídeo ASUS TUF"></div>
+            <div class="etiquetas"><span>GDDR6X</span><span>DLSS 3</span></div>
+            <h3>Placa de Vídeo ASUS TUF Gaming GeForce RTX 4070 Ti...</h3>
+            <div class="preco-antigo">R$ 6.299,00</div>
+            <div class="preco-atual">R$ 5.354,15</div>
+            <div class="parcelas">à vista no PIX com 15% OFF ou 12x de R$ 524,91 sem juros</div>
+            <div class="card-compra">
+              <a class="botao botao-escuro" href="produto.html">Ver</a>
+              <button class="botao-quadrado botao-carrinho" aria-label="Adicionar ao carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </article>
+
+          <article class="card" data-preco="2789.10" data-ordem="2">
+            <div class="card-selos">
+              <span class="selo selo-vermelho">12% OFF</span>
+              <span class="selo selo-verde">Frete Grátis</span>
+            </div>
+            <button class="favorito">Favoritar</button>
+            <div class="imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZbs5ZuTePmKq9LkqB0o3jY_HN1sZ8An9gVXFux0AuHg&s" alt="Processador AMD Ryzen 7"></div>
+            <div class="etiquetas"><span>8 Cores</span><span>16 Threads</span><span>5.0 GHz</span></div>
+            <h3>Processador AMD Ryzen 7 7800X3D 4.2GHz (5.0GHz...</h3>
+            <div class="estoque-baixo">Últimas 8 unidades em estoque</div>
+            <div class="preco-antigo">R$ 3.299,00</div>
+            <div class="preco-atual">R$ 2.789,10</div>
+            <div class="parcelas">à vista no PIX com 15% OFF ou 10x de R$ 328,13 sem juros</div>
+            <div class="card-compra">
+              <a class="botao botao-escuro" href="produto.html">Ver</a>
+              <button class="botao-quadrado botao-carrinho" aria-label="Adicionar ao carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </article>
+
+          <article class="card" data-preco="899.90" data-ordem="3">
+            <div class="card-selos">
+              <span class="selo selo-vermelho">18% OFF</span>
+              <span class="selo selo-verde">Frete Grátis</span>
+            </div>
+            <button class="favorito">Favoritar</button>
+            <div class="imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWtZWZiq981cVihI2C1MyjEP1LuR7WpmjSaTe5_ciLw&s=10" alt="Memória Corsair Vengeance"></div>
+            <div class="etiquetas"><span>32GB</span><span>6000MHz</span><span>DDR5</span></div>
+            <h3>Memória Corsair Vengeance RGB 32GB (2x16GB) DDR5...</h3>
+            <div class="preco-antigo">R$ 1.199,00</div>
+            <div class="preco-atual">R$ 899,90</div>
+            <div class="parcelas">à vista no PIX com 15% OFF ou 8x de R$ 132,34 sem juros</div>
+            <div class="card-compra">
+              <a class="botao botao-escuro" href="produto.html">Ver</a>
+              <button class="botao-quadrado botao-carrinho" aria-label="Adicionar ao carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </article>
+
+          <article class="card" data-preco="1079.20" data-ordem="4">
+            <div class="card-selos">
+              <span class="selo selo-vermelho">20% OFF</span>
+              <span class="selo selo-verde">Frete Grátis</span>
+            </div>
+            <button class="favorito">Favoritar</button>
+            <div class="imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw06YM53uW47tAyobjyGhefE_Xfcig0dLGBsvoBs_1Zw&s=10" alt="SSD Kingston KC3000"></div>
+            <div class="etiquetas"><span>2TB</span><span>7.000 MB/s Leit./Grav.</span><span>NVMe</span></div>
+            <h3>SSD Kingston KC3000 2TB M.2 2280 PCIe 4.0 NVMe 7000MB/s</h3>
+            <div class="estoque-baixo">Entrega até hoje comprando dentro de 12h</div>
+            <div class="preco-antigo">R$ 1.349,00</div>
+            <div class="preco-atual">R$ 1.079,20</div>
+            <div class="parcelas">à vista no PIX com 15% OFF ou 10x de R$ 126,96 sem juros</div>
+            <div class="card-compra">
+              <a class="botao botao-escuro" href="produto.html">Ver</a>
+              <button class="botao-quadrado botao-carrinho" aria-label="Adicionar ao carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </article>
+
+          <article class="card" data-preco="2124.15" data-ordem="5">
+            <div class="card-selos">
+              <span class="selo selo-vermelho">10% OFF</span>
+              <span class="selo selo-verde">Frete Grátis</span>
+            </div>
+            <button class="favorito">Favoritar</button>
+            <div class="imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ1kjdqLQsMybhMAqlniXfY7OFgEjAY3Gwun6jjIkr6Q&s=10" alt="Placa-mãe ASUS ROG Strix"></div>
+            <div class="etiquetas"><span>Socket AM5</span><span>Wi-Fi</span><span>4 Slots RAM</span></div>
+            <h3>Placa-Mãe ASUS ROG Strix B650E-F Gaming Wi-Fi, AMD...</h3>
+            <div class="preco-antigo">R$ 2.499,00</div>
+            <div class="preco-atual">R$ 2.124,15</div>
+            <div class="parcelas">à vista no PIX com 15% OFF ou 10x de R$ 249,90 sem juros</div>
+            <div class="card-compra">
+              <a class="botao botao-escuro" href="produto.html">Ver</a>
+              <button class="botao-quadrado botao-carrinho" aria-label="Adicionar ao carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </article>
+
+          <article class="card" data-preco="977.50" data-ordem="6">
+            <div class="card-selos">
+              <span class="selo selo-vermelho">15% OFF</span>
+              <span class="selo selo-verde">Frete Grátis</span>
+            </div>
+            <button class="favorito">Favoritar</button>
+            <div class="imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmHnAHkRhcOPOKHus2voxksh8gw10WDDXe5Y08BFG0nw&s=10" alt="Fonte Corsair RM850x"></div>
+            <div class="etiquetas"><span>850W</span></div>
+            <h3>Fonte Corsair RM850x 850W, 80 Plus Gold, Totalmente...</h3>
+            <div class="estoque-baixo">Últimas 6 unidades em estoque</div>
+            <div class="preco-antigo">R$ 1.150,00</div>
+            <div class="preco-atual">R$ 977,50</div>
+            <div class="parcelas">à vista no PIX com 15% OFF ou 10x de R$ 115,00 sem juros</div>
+            <div class="card-compra">
+              <a class="botao botao-escuro" href="produto.html">Ver</a>
+              <button class="botao-quadrado botao-carrinho" aria-label="Adicionar ao carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </article>
+        </div>
+
+        <div class="paginacao">
+          <span>Mostrando 1 a 6 de 48 produtos disponíveis</span>
+          <div>
+            <button>&lt;</button>
+            <button class="numero ativo">1</button>
+            <button class="numero">2</button>
+            <button class="numero">3</button>
+            <button class="numero">8</button>
+            <button class="numero">9</button>
+            <button>&gt;</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-colunas">
+        <div>
+          <h4>TECHNO STORE</h4>
+          <p>Referência nacional em hardware premium, montagem de setups entusiastas de alto desempenho e periféricos para pro-gamers e profissionais da computação.</p>
+          <p>CNPJ: 42.108.990/0001-54<br>Av. Engenharia da Computação, 1024 - SP<br>atendimento@nexustech.com.br</p>
+        </div>
+        <div>
+          <h4>Departamentos</h4>
+          <ul>
+            <li>Processadores Intel &amp; AMD</li>
+            <li>Placas de Vídeo RTX &amp; Radeon</li>
+            <li>Placas-Mãe &amp; Memória RAM</li>
+            <li>Armazenamento NVMe &amp; SSD</li>
+            <li>Fontes Modulares &amp; Refrigeração</li>
+            <li>Monitores 144Hz a 360Hz</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ajuda &amp; Atendimento</h4>
+          <ul>
+            <li>Central de Atendimento ao Cliente</li>
+            <li>Política de Garantia &amp; RMA Direct</li>
+            <li>Prazos de Envio e Rastreamento</li>
+            <li>Trocas e Devoluções</li>
+            <li>Fale com o Suporte Técnico</li>
+            <li>Portal de Afiliados e Parcerias</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Segurança &amp; Pagamentos</h4>
+          <div class="caixa-pagamento">
+            <strong>Métodos de Pagamento</strong><br>
+            <span>PIX</span><span>Cartão até 12x</span><span>Boleto Bancário</span><span>Débito</span>
+          </div>
+          <div class="caixa-pagamento">
+            <strong>Certificados Seguros</strong><br>
+            <span>SSL 256 bits</span><span>Selo RA1000</span>
+          </div>
+        </div>
+      </div>
+      <div class="rodape-final">
+        <span>© 2026 NexusTech Comércio Eletrônico de Computadores Ltda. Todos os direitos reservados.</span>
+        <div>
+          <span>Termos de Uso</span><span>Privacidade de Dados</span><span>Conformidade LGPD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="aviso" id="aviso"></div>
+</body>
+<script src="script.js"></script>
+</html>

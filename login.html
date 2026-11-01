@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar - Techno Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-login">
+  <div class="login-caixa">
+    <section class="login-lado">
+      <a class="logo" href="index.html">
+        <span class="logo-icone">TS</span>
+        <span>
+          <strong>TECHNO STORE</strong>
+          <small>PARA VOCÊ, O MELHOR</small>
+        </span>
+      </a>
+      <div>
+        <h2>Engenharia de precisão para seu setup.</h2>
+        <p>Sincronize suas configurações, orçamentos personalizados, rastreamento de entregas prioritárias e alertas de estoque em tempo real.</p>
+      </div>
+    </section>
+
+    <section class="login-form">
+      <h1>Entre na sua Conta</h1>
+      <form id="form-login">
+        <div class="campo">
+          <div class="campo-topo"><label for="email">E-mail</label></div>
+          <input type="email" id="email" placeholder="usuario@email.com">
+        </div>
+        <div class="campo">
+          <div class="campo-topo">
+            <label for="senha">Senha</label>
+            <a href="#">Esqueci minha senha</a>
+          </div>
+          <div class="campo-senha">
+            <input type="password" id="senha" placeholder="Digite sua senha">
+            <button type="button" id="mostrar-senha">Mostrar</button>
+          </div>
+        </div>
+        <label class="lembrar">
+          <input type="checkbox">
+          Lembrar meu acesso neste dispositivo
+        </label>
+        <p class="mensagem-erro" id="erro-login"></p>
+        <button type="submit" class="botao botao-azul">Entrar na Minha Conta</button>
+      </form>
+
+      <p class="divisor">OU ACESSE RAPIDAMENTE COM</p>
+      <button type="button" class="botao-google">Google</button>
+
+      <div class="cadastro">
+        Não tem uma conta?
+        <a href="#">Cadastre-se gratuitamente</a>
+      </div>
+
+      <div class="login-garantias">
+        <span>Compra Segura</span>
+        <span>Suporte Especializado</span>
+        <span>RMA Express</span>
+      </div>
+    </section>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
