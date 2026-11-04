@@ -22,7 +22,7 @@
         <button type="submit">Buscar</button>
       </form>
       <div class="topo-acoes">
-        <a class="carrinho" href="#"><i class="fa-solid fa-cart-shopping"></i> Carrinho <span class="contador" id="contador-carrinho">0</span></a>
+        <a class="carrinho" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho <span class="contador" id="contador-carrinho">0</span></a>
         <a class="usuario" href="login.html">
           <span class="avatar">C</span>
           <span>Olá, Cristiana<br><strong>Minha Conta</strong></span>
@@ -72,20 +72,22 @@
         </div>
         <button class="botao botao-escuro" id="comprar-agora">COMPRAR AGORA</button>
 
-        <div class="frete">
-          <h4>Frete e Prazo de Entrega</h4>
-          <div class="frete-campo">
-            <input type="text" id="cep" placeholder="00000-000" maxlength="9">
-            <button id="calcular-frete">Calcular</button>
-          </div>
-          <p class="frete-resultado" id="frete-resultado"></p>
-          <div class="frete-opcao">
-            <span>Express Direct (Capital e RM)<br><small>Entrega amanhã até 18h</small></span>
-            <strong>GRÁTIS</strong>
-          </div>
-          <div class="frete-opcao">
-            <span>Jadlog Econômica<br><small>3 a 4 dias úteis</small></span>
-            <strong>GRÁTIS</strong>
+        <div class="caixa-preco">
+          <div class="frete">
+            <h4>Frete e Prazo de Entrega</h4>
+            <div class="frete-campo">
+              <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+              <button class="botao botao-azul" id="calcular-frete">Calcular</button>
+            </div>
+            <p class="frete-resultado" id="frete-resultado"></p>
+            <div class="frete-opcao">
+              <span>Express Direct (Capital e RM)<br><small>Entrega amanhã até 18h</small></span>
+              <strong>GRÁTIS</strong>
+            </div>
+            <div class="frete-opcao">
+              <span>Jadlog Econômica<br><small>3 a 4 dias úteis</small></span>
+              <strong>GRÁTIS</strong>
+            </div>
           </div>
         </div>
 
