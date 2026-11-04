@@ -483,3 +483,20 @@ document.getElementById("botao-pagar").addEventListener("click", function () {
 });
 
 mostrarMetodo("pix");
+
+
+var campoBusca = document.querySelector(".busca input");
+var popupBusca = document.getElementById("busca-popup");
+ 
+if (campoBusca != null && popupBusca != null) {
+  campoBusca.addEventListener("click", function () {
+    popupBusca.classList.add("visivel");
+  });
+ 
+  document.addEventListener("click", function (evento) {
+    var barra = document.querySelector(".busca");
+    if (!barra.contains(evento.target)) {
+      popupBusca.classList.remove("visivel");
+    }
+  });
+}

@@ -2172,3 +2172,43 @@ ul {
     font-size: 18px;
   }
 }
+
+.busca {
+  position: relative;
+  overflow: visible;
+}
+ 
+.busca-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  border: 1px solid var(--borderLabel);
+  border-radius: 8px;
+  background: var(--label);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 34, 54, 0.18);
+}
+ 
+.busca-popup.visivel {
+  display: block;
+}
+ 
+.busca-popup a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--borderLabel);
+  font-size: 13px;
+}
+ 
+.busca-popup a:last-child {
+  border-bottom: none;
+}
+ 
+.busca-popup a:hover {
+  background: #e3ebf7;
+}
