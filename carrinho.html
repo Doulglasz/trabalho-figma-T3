@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Techno Store - Carrinho</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carrinho.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a class="logo" href="index.html">
+        <span class="logo-icone">TS</span>
+        <span>
+          <strong>TECHNO STORE</strong>
+          <small>PARA VOCÊ, O MELHOR</small>
+        </span>
+      </a>
+      <form class="busca" onsubmit="return false">
+        <input type="text" placeholder="Buscar processadores, placas de vídeo, notebooks e periféricos...">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="topo-acoes">
+        <a class="carrinho" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho <span class="contador" id="contador-carrinho">2</span></a>
+        <a class="usuario" href="login.html">
+          <span class="avatar">C</span>
+          <span>Olá, Cristiana<br><strong>Minha Conta</strong></span>
+        </a>
+      </div>
+    </div>
+    <nav class="container menu">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Computadores &amp; Notebooks</a>
+      <a href="catalogo.html">Peças &amp; Hardware</a>
+      <a href="catalogo.html">Periféricos</a>
+      <a href="catalogo.html">Promoções &amp; Ofertas <span class="selo selo-vermelho oferta">OFERTAS</span></a>
+    </nav>
+  </header>
+
+  <main class="container ct-pagina">
+    <section class="ct-caixa ct-etapas">
+      <div class="ct-etapa atual">
+        <span class="ct-etapa-num">1</span>
+        <div><small>ETAPA ATUAL</small><strong>Carrinho</strong></div>
+      </div>
+      <div class="ct-etapa">
+        <span class="ct-etapa-num">2</span>
+        <div><small>PRÓXIMO</small><strong>Identificação e Endereço</strong></div>
+      </div>
+      <div class="ct-etapa">
+        <span class="ct-etapa-num">3</span>
+        <div><small>AGUARDANDO</small><strong>Pagamento</strong></div>
+      </div>
+      <div class="ct-etapa">
+        <span class="ct-etapa-num">4</span>
+        <div><small>FINALIZAÇÃO</small><strong>Confirmação</strong></div>
+      </div>
+    </section>
+
+    <div class="ct-grade">
+      <div class="ct-coluna">
+        <section class="ct-caixa">
+          <div class="ct-titulo-barra">
+            <h2><i class="fa-solid fa-clipboard-list"></i> Itens no Carrinho <span class="ct-pilula" id="ct-selecionados">2 selecionados</span></h2>
+            <button type="button" class="ct-limpar" id="ct-limpar"><i class="fa-solid fa-trash-can"></i> Limpar Carrinho</button>
+          </div>
+
+          <div id="ct-lista">
+          <article class="ct-item" data-preco="2450" data-antigo="0">
+            <div class="imagem ct-imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZbs5ZuTePmKq9LkqB0o3jY_HN1sZ8An9gVXFux0AuHg&s" alt="Processador AMD Ryzen 7"></div>
+            <div class="ct-info">
+              <div class="ct-tags">
+                <span class="ct-tag">Processador</span>
+                <span class="ct-estoque"><i class="fa-solid fa-circle"></i> Em Estoque</span>
+              </div>
+              <h3>Processador AMD Ryzen 7 7800X3D 4.2GHz (5.0GHz Turbo) 8-Core 16-Threads AM5</h3>
+            </div>
+            <div class="ct-lado">
+              <div class="ct-qtd">
+                <button type="button" class="ct-menos" aria-label="Diminuir quantidade">-</button>
+                <span class="ct-num">1</span>
+                <button type="button" class="ct-mais" aria-label="Aumentar quantidade">+</button>
+              </div>
+              <div class="ct-precos">
+                <s class="ct-antigo"></s>
+                <strong class="ct-preco"></strong>
+              </div>
+              <button type="button" class="ct-remover" aria-label="Remover item"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+          </article>
+          <article class="ct-item" data-preco="890" data-antigo="989">
+            <div class="imagem ct-imagem"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWtZWZiq981cVihI2C1MyjEP1LuR7WpmjSaTe5_ciLw&s=10" alt="Memória Corsair Vengeance"></div>
+            <div class="ct-info">
+              <div class="ct-tags">
+                <span class="ct-tag">Memória RAM</span>
+                <span class="ct-estoque"><i class="fa-solid fa-circle"></i> Em Estoque</span>
+              </div>
+              <h3>Memória Corsair Vengeance RGB 32GB (2×16GB) DDR5 6000MHz CL30 Black</h3>
+            </div>
+            <div class="ct-lado">
+              <div class="ct-qtd">
+                <button type="button" class="ct-menos" aria-label="Diminuir quantidade">-</button>
+                <span class="ct-num">1</span>
+                <button type="button" class="ct-mais" aria-label="Aumentar quantidade">+</button>
+              </div>
+              <div class="ct-precos">
+                <s class="ct-antigo"></s>
+                <strong class="ct-preco"></strong>
+              </div>
+              <button type="button" class="ct-remover" aria-label="Remover item"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+          </article>
+          </div>
+
+          <div class="ct-vazio ct-escondido" id="ct-vazio">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <strong>Seu carrinho está vazio</strong>
+            <p>Que tal conferir nossos produtos?</p>
+            <a class="botao botao-azul" href="catalogo.html">Ver produtos</a>
+          </div>
+
+          <a class="ct-voltar" href="catalogo.html"><i class="fa-solid fa-arrow-left"></i> Continuar Comprando</a>
+        </section>
+
+        <div class="ct-duas">
+          <section class="ct-caixa">
+            <h2 class="ct-subtitulo"><i class="fa-solid fa-tag"></i> Cupom Promocional</h2>
+            <p class="ct-texto">Insira o código promocional para validar condições exclusivas para seu pedido.</p>
+            <div class="ct-linha-campo">
+              <input type="text" id="ct-cupom" placeholder="Digite um cupom...">
+              <button type="button" class="botao botao-azul" id="ct-aplicar">Aplicar</button>
+            </div>
+            <div class="ct-cupom-ativo" id="ct-cupom-ativo">
+              <i class="fa-regular fa-circle-check"></i>
+              <div>
+                <strong>NEXUSPRO10</strong>
+                <p>Cupom de Frete Expresso Grátis ativo!</p>
+              </div>
+              <span>Ativado</span>
+            </div>
+          </section>
+
+          <section class="ct-caixa">
+            <div class="ct-subtitulo-linha">
+              <h2 class="ct-subtitulo"><i class="fa-solid fa-truck-fast"></i> Calcular Fretamento</h2>
+              <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener">Não sei meu CEP</a>
+            </div>
+            <p class="ct-texto">Entrega com rastreio prioritário e seguro total de carga.</p>
+            <div class="ct-linha-campo">
+              <input type="text" id="ct-cep" inputmode="numeric" maxlength="9" placeholder="00000-000">
+              <button type="button" class="botao botao-azul" id="ct-calcular">Calcular</button>
+            </div>
+            <label class="ct-opcao">
+              <input type="radio" name="frete" value="express" checked>
+              <div>
+                <strong>Nexus Express Direct</strong>
+                <span>Até 2 dias úteis</span>
+              </div>
+              <div class="ct-opcao-preco" id="ct-express-preco"></div>
+            </label>
+            <label class="ct-opcao">
+              <input type="radio" name="frete" value="sedex">
+              <div>
+                <strong>Entrega Padrão Sedex</strong>
+                <span>Até 4 dias úteis</span>
+              </div>
+              <div class="ct-opcao-preco"><strong>R$ 29,90</strong></div>
+            </label>
+          </section>
+        </div>
+      </div>
+
+      <aside class="ct-caixa ct-resumo">
+        <div class="ct-resumo-topo">
+          <h2>Resumo do Pedido</h2>
+          <i class="fa-solid fa-receipt"></i>
+        </div>
+        <div class="ct-linha"><span>Subtotal</span><strong id="ct-subtotal"></strong></div>
+        <div class="ct-linha"><span>Frete</span><div class="ct-frete" id="ct-frete"></div></div>
+
+        <div class="ct-total">
+          <div class="ct-total-linha"><span>Total</span><strong id="ct-total"></strong></div>
+          <div class="ct-total-pix"><span>No pix (15% de desconto)</span><strong id="ct-pix"></strong></div>
+        </div>
+
+        <div class="ct-parcelado">
+          <span>Ou parcelado no cartão em até:</span>
+          <strong id="ct-parcelas"></strong>
+        </div>
+
+        <a class="botao botao-escuro ct-continuar" id="ct-continuar" href="pagamento.html">Continuar <i class="fa-solid fa-arrow-right"></i></a>
+
+        <ul class="ct-beneficios">
+          <li><i class="fa-regular fa-circle-check"></i> Hardware 100% Original: Peças lacradas e homologadas pelos fabricantes.</li>
+          <li><i class="fa-solid fa-rotate"></i> Fácil Devolução: Você pode devolver um produto gratuitamente em até 30 dias após o recebimento.</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Garantia Techno Store: Atendimento direto sem intermediários.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-colunas">
+        <div>
+          <h4>TECHNO STORE</h4>
+          <p>Referência nacional em hardware premium, montagem de setups entusiastas de alto desempenho e periféricos para pro-gamers e profissionais da computação.</p>
+          <p>CNPJ: 42.108.990/0001-54<br>Av. Engenharia da Computação, 1024 - SP<br>atendimento@nexustech.com.br</p>
+        </div>
+        <div>
+          <h4>Departamentos</h4>
+          <ul>
+            <li>Processadores Intel &amp; AMD</li>
+            <li>Placas de Vídeo RTX &amp; Radeon</li>
+            <li>Placas-Mãe &amp; Memória RAM</li>
+            <li>Armazenamento NVMe &amp; SSD</li>
+            <li>Fontes Modulares &amp; Refrigeração</li>
+            <li>Monitores 144Hz a 360Hz</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ajuda &amp; Atendimento</h4>
+          <ul>
+            <li>Central de Atendimento ao Cliente</li>
+            <li>Política de Garantia &amp; RMA Direct</li>
+            <li>Prazos de Envio e Rastreamento</li>
+            <li>Trocas e Devoluções</li>
+            <li>Fale com o Suporte Técnico</li>
+            <li>Portal de Afiliados e Parcerias</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Segurança &amp; Pagamentos</h4>
+          <div class="caixa-pagamento">
+            <strong>Métodos de Pagamento</strong><br>
+            <span>PIX</span><span>Cartão até 12x</span><span>Boleto Bancário</span><span>Débito</span>
+          </div>
+          <div class="caixa-pagamento">
+            <strong>Certificados Seguros</strong><br>
+            <span>SSL 256 bits</span><span>Selo RA1000</span>
+          </div>
+        </div>
+      </div>
+      <div class="rodape-final">
+        <span>© 2026 TechnoStore Comércio Eletrônico de Computadores Ltda. Todos os direitos reservados.</span>
+        <div>
+          <span>Termos de Uso</span><span>Privacidade de Dados</span><span>Conformidade LGPD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="aviso" id="aviso"></div>
+</body>
+<script src="script.js"></script>
+<script src="carrinho.js"></script>
+</html>

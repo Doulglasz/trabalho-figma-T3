@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Techno Store - Meus Pedidos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pedidos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a class="logo" href="index.html">
+        <span class="logo-icone">TS</span>
+        <span>
+          <strong>TECHNO STORE</strong>
+          <small>PARA VOCÊ, O MELHOR</small>
+        </span>
+      </a>
+      <form class="busca" onsubmit="return false">
+        <input type="text" placeholder="Buscar processadores, placas de vídeo, notebooks e periféricos...">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="topo-acoes">
+        <a class="carrinho" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho <span class="contador" id="contador-carrinho">2</span></a>
+        <a class="usuario" href="login.html">
+          <span class="avatar">C</span>
+          <span>Olá, Cristiana<br><strong>Minha Conta</strong></span>
+        </a>
+      </div>
+    </div>
+    <nav class="container menu">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Computadores &amp; Notebooks</a>
+      <a href="catalogo.html">Peças &amp; Hardware</a>
+      <a href="catalogo.html">Periféricos</a>
+      <a href="catalogo.html">Promoções &amp; Ofertas <span class="selo selo-vermelho oferta">OFERTAS</span></a>
+    </nav>
+  </header>
+
+  <main class="container pd-pagina">
+    <div class="pd-cabecalho">
+      <div>
+        <h1>Meus Pedidos</h1>
+        <p>Gerencie, rastreie e consulte o histórico de todas as suas compras.</p>
+      </div>
+      <label class="pd-periodo">Período:
+        <select id="pd-periodo">
+          <option>Últimos 6 meses</option>
+          <option>Últimos 12 meses</option>
+          <option>Todo o período</option>
+        </select>
+      </label>
+    </div>
+
+    <section class="pd-caixa pd-filtros">
+      <div class="pd-pesquisa">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="pd-busca" placeholder="Buscar por número do pedido, produto ou NF...">
+      </div>
+      <div class="pd-abas" id="pd-abas">
+        <button type="button" class="ativo" data-filtro="todos">Todos os Pedidos <span>13</span></button>
+        <button type="button" data-filtro="andamento">Em Andamento <span>1</span></button>
+        <button type="button" data-filtro="entregue">Entregues <span>11</span></button>
+        <button type="button" data-filtro="cancelado">Cancelados <span>1</span></button>
+      </div>
+    </section>
+
+    <section class="pd-secao">
+      <h2 class="pd-secao-titulo"><i class="fa-solid fa-truck-fast"></i> Envio em Andamento</h2>
+      <article class="pd-pedido" data-status="andamento">
+        <div class="pd-pedido-topo">
+          <div class="pd-dados">
+            <div><small>NÚMERO DO PEDIDO</small><strong>#NX-84920</strong></div>
+            <div><small>DATA DO PEDIDO</small><strong>10/10/2026</strong></div>
+            <div><small>VALOR TOTAL</small><strong class="pd-verde">R$ 2.839,00</strong><em>via Pix</em></div>
+          </div>
+        </div>
+
+        <div class="pd-previsao">
+          <div class="pd-previsao-icone"><i class="fa-regular fa-clock"></i></div>
+          <div class="pd-previsao-texto">
+            <small>PREVISÃO ESTIMADA DE ENTREGA</small>
+            <strong>Quinta-feira, 15 de Outubro</strong>
+            <span>Transportadora: Nexus Express Direct</span>
+          </div>
+          <div class="pd-acoes">
+            <button type="button" class="botao botao-azul" id="pd-rastrear"><i class="fa-regular fa-paper-plane"></i> Rastrear em Tempo Real</button>
+            <button type="button" class="botao botao-cart" id="pd-danfe"><i class="fa-solid fa-download"></i> DANFE / NF-e</button>
+          </div>
+        </div>
+
+        <h3 class="pd-rastreio-titulo"><i class="fa-solid fa-chart-line"></i> Progresso do Rastreio</h3>
+        <div class="pd-rastreio">
+            <div class="pd-passo feito">
+              <span class="pd-passo-icone"><i class="fa-solid fa-check"></i></span>
+              <strong>Pedido Realizado</strong>
+              <small>10/10 às 09:12</small>
+            </div>
+            <div class="pd-passo feito">
+              <span class="pd-passo-icone"><i class="fa-regular fa-circle-check"></i></span>
+              <strong>Pagamento Aprovado</strong>
+              <small>10/10 às 09:14</small>
+            </div>
+            <div class="pd-passo feito">
+              <span class="pd-passo-icone"><i class="fa-solid fa-box-archive"></i></span>
+              <strong>Separação &amp; Embalagem</strong>
+              <small>11/10 às 14:30</small>
+            </div>
+            <div class="pd-passo atual">
+              <span class="pd-passo-icone"><i class="fa-solid fa-truck-fast"></i></span>
+              <strong>Em Transporte</strong>
+              <small>Cajamar - SP</small>
+            </div>
+            <div class="pd-passo pendente">
+              <span class="pd-passo-icone"><i class="fa-solid fa-check-double"></i></span>
+              <strong>Entregue</strong>
+              <small>Previsto para 15/10</small>
+            </div>
+        </div>
+
+        <div class="pd-pacote">
+          <small>PRODUTOS NO PACOTE (2 ITENS)</small>
+          <div class="pd-pacote-itens">
+            <div class="pd-produto">
+              <div class="imagem pd-miniatura-pequena"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZbs5ZuTePmKq9LkqB0o3jY_HN1sZ8An9gVXFux0AuHg&s" alt="Processador AMD Ryzen 7"></div>
+              <div>
+                <strong>Processador AMD Ryzen 7 7800X3D 4.2GHz (5.0GHz Turbo) 8-Core 16-Threads AM5</strong>
+                <small>Qtd: 1 un • Garantia 36 meses</small>
+                <b>R$ 2.450,00</b>
+              </div>
+            </div>
+            <div class="pd-produto">
+              <div class="imagem pd-miniatura-pequena"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWtZWZiq981cVihI2C1MyjEP1LuR7WpmjSaTe5_ciLw&s=10" alt="Memória Corsair Vengeance"></div>
+              <div>
+                <strong>Memória Corsair Vengeance RGB 32GB (2×16GB) DDR5 6000MHz CL30 Black</strong>
+                <small>Qtd: 1 un • Garantia 48 meses</small>
+                <b>R$ 890,00</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="pd-secao">
+      <div class="pd-secao-linha">
+        <h2 class="pd-secao-titulo">Histórico de Pedidos</h2>
+        <span>Ordenado pelos mais recentes</span>
+      </div>
+        <article class="pd-pedido" data-status="entregue">
+          <div class="pd-pedido-topo">
+            <div class="pd-dados">
+              <div><small>PEDIDO</small><strong>#NX-79210</strong></div>
+              <div><small>DATA DA COMPRA</small><strong>15/08/2026</strong></div>
+              <div><small>TOTAL</small><strong>R$ 899,00</strong><em>6x no cartão</em></div>
+            </div>
+            <span class="pd-status"><i class="fa-regular fa-circle-check"></i> ENTREGUE EM 18/08/2026</span>
+          </div>
+          <div class="pd-historico-item">
+            <div class="imagem pd-miniatura-pequena"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWtZWZiq981cVihI2C1MyjEP1LuR7WpmjSaTe5_ciLw&s=10" alt="Kit de memória RAM"></div>
+            <div class="pd-historico-nome">
+              <strong>Kit Memória RAM Corsair Vengeance 32GB (2×16GB) 6000MHz CL30</strong>
+              <small>Qtd: 1 un • Garantia 32 meses</small>
+              
+            </div>
+            <div class="pd-acoes">
+              <button type="button" class="botao botao-cart pd-comprar"><i class="fa-solid fa-rotate-right"></i> Comprar Novamente</button><button type="button" class="botao pd-avaliar"><i class="fa-regular fa-star"></i> Avaliar Produto (+250 pts)</button>
+              <button type="button" class="pd-nota" aria-label="Baixar nota fiscal"><i class="fa-regular fa-file-lines"></i></button>
+              <button type="button" class="pd-detalhes-botao">Ver Detalhes <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="pd-detalhes pd-escondido">Pagamento: 6x no cartão • Entrega: Nexus Express Direct • Nota fiscal disponível para download.</div>
+        </article>
+        <article class="pd-pedido" data-status="entregue">
+          <div class="pd-pedido-topo">
+            <div class="pd-dados">
+              <div><small>PEDIDO</small><strong>#NX-64102</strong></div>
+              <div><small>DATA DA COMPRA</small><strong>02/03/2026</strong></div>
+              <div><small>TOTAL</small><strong>R$ 749,99</strong><em>via Boleto</em></div>
+            </div>
+            <span class="pd-status"><i class="fa-regular fa-circle-check"></i> ENTREGUE EM 06/03/2026</span>
+          </div>
+          <div class="pd-historico-item">
+            <div class="imagem pd-miniatura-pequena"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmHnAHkRhcOPOKHus2voxksh8gw10WDDXe5Y08BFG0nw&s=10" alt="Fonte Corsair RM850x"></div>
+            <div class="pd-historico-nome">
+              <strong>Fonte Corsair RM850x 850W 80 Plus Gold Modular</strong>
+              <small>Qtd: 1 un • Garantia 24 meses</small>
+              
+            </div>
+            <div class="pd-acoes">
+              <button type="button" class="botao botao-cart pd-comprar"><i class="fa-solid fa-rotate-right"></i> Comprar Novamente</button><button type="button" class="botao pd-avaliar"><i class="fa-regular fa-star"></i> Avaliar Produto (+250 pts)</button>
+              <button type="button" class="pd-nota" aria-label="Baixar nota fiscal"><i class="fa-regular fa-file-lines"></i></button>
+              <button type="button" class="pd-detalhes-botao">Ver Detalhes <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="pd-detalhes pd-escondido">Pagamento: Boleto bancário • Entrega: Nexus Express Direct • Nota fiscal disponível para download.</div>
+        </article>
+        <article class="pd-pedido" data-status="entregue">
+          <div class="pd-pedido-topo">
+            <div class="pd-dados">
+              <div><small>PEDIDO</small><strong>#NX-51098</strong></div>
+              <div><small>DATA DA COMPRA</small><strong>18/11/2025</strong></div>
+              <div><small>TOTAL</small><strong>R$ 1.849,00</strong><em>via Débito</em></div>
+            </div>
+            <span class="pd-status"><i class="fa-regular fa-circle-check"></i> ENTREGUE EM 21/11/2025</span>
+          </div>
+          <div class="pd-historico-item">
+            <div class="imagem pd-miniatura-pequena"><i class="fa-solid fa-desktop"></i></div>
+            <div class="pd-historico-nome">
+              <strong>Monitor Gamer ASUS TUF Gaming 27" 165Hz IPS 1ms</strong>
+              <small>Qtd: 1 un • Garantia 48 meses</small>
+              <span class="pd-avaliado"><i class="fa-regular fa-thumbs-up"></i> Você avaliou este produto com 5 estrelas</span>
+            </div>
+            <div class="pd-acoes">
+              <button type="button" class="botao botao-cart pd-comprar"><i class="fa-solid fa-rotate-right"></i> Comprar Novamente</button>
+              <button type="button" class="pd-nota" aria-label="Baixar nota fiscal"><i class="fa-regular fa-file-lines"></i></button>
+              <button type="button" class="pd-detalhes-botao">Ver Detalhes <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="pd-detalhes pd-escondido">Pagamento: Débito • Entrega: Nexus Express Direct • Nota fiscal disponível para download.</div>
+        </article>
+
+      <p class="pd-sem-resultado pd-escondido" id="pd-sem-resultado">Nenhum pedido encontrado.</p>
+
+      <div class="pd-rodape-lista">
+        <span id="pd-exibindo">Exibindo 4 de 13 pedidos realizados</span>
+        <div class="pd-paginas" id="pd-paginas">
+          <button type="button" id="pd-anterior" aria-label="Página anterior"><i class="fa-solid fa-angle-left"></i></button>
+          <button type="button" class="numero ativo">1</button>
+          <button type="button" class="numero">2</button>
+          <button type="button" class="numero">3</button>
+          <button type="button" id="pd-proxima" aria-label="Próxima página"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pd-suporte">
+      <div class="pd-suporte-topo">
+        <div>
+          <h2>Precisa de suporte com suas compras?</h2>
+          <p>Nossa equipe técnica especializada e centro de distribuição estão prontos para te atender. Dúvidas com códigos de rastreamento, atraso, acionamento de garantia de fábrica ou emissão de segunda via fiscal.</p>
+        </div>
+        <div class="pd-acoes">
+          <button type="button" class="botao botao-cart pd-suporte-botao"><i class="fa-regular fa-circle-question"></i> Central de Ajuda &amp; FAQ</button>
+          <button type="button" class="botao botao-azul pd-suporte-botao"><i class="fa-solid fa-headset"></i> Falar com Especialista</button>
+        </div>
+      </div>
+      <div class="pd-vantagens">
+        <div><i class="fa-solid fa-shield-halved"></i><div><strong>Garantia</strong><small>Troca imediata até 30 dias sem burocracia</small></div></div>
+        <div><i class="fa-solid fa-truck-fast"></i><div><strong>Seguro de Carga Total</strong><small>Todas as encomendas com cobertura 100%</small></div></div>
+        <div><i class="fa-solid fa-lock"></i><div><strong>RMA Descomplicado</strong><small>Acompanhe laudos e reparos online</small></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-colunas">
+        <div>
+          <h4>TECHNO STORE</h4>
+          <p>Referência nacional em hardware premium, montagem de setups entusiastas de alto desempenho e periféricos para pro-gamers e profissionais da computação.</p>
+          <p>CNPJ: 42.108.990/0001-54<br>Av. Engenharia da Computação, 1024 - SP<br>atendimento@nexustech.com.br</p>
+        </div>
+        <div>
+          <h4>Departamentos</h4>
+          <ul>
+            <li>Processadores Intel &amp; AMD</li>
+            <li>Placas de Vídeo RTX &amp; Radeon</li>
+            <li>Placas-Mãe &amp; Memória RAM</li>
+            <li>Armazenamento NVMe &amp; SSD</li>
+            <li>Fontes Modulares &amp; Refrigeração</li>
+            <li>Monitores 144Hz a 360Hz</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ajuda &amp; Atendimento</h4>
+          <ul>
+            <li>Central de Atendimento ao Cliente</li>
+            <li>Política de Garantia &amp; RMA Direct</li>
+            <li>Prazos de Envio e Rastreamento</li>
+            <li>Trocas e Devoluções</li>
+            <li>Fale com o Suporte Técnico</li>
+            <li>Portal de Afiliados e Parcerias</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Segurança &amp; Pagamentos</h4>
+          <div class="caixa-pagamento">
+            <strong>Métodos de Pagamento</strong><br>
+            <span>PIX</span><span>Cartão até 12x</span><span>Boleto Bancário</span><span>Débito</span>
+          </div>
+          <div class="caixa-pagamento">
+            <strong>Certificados Seguros</strong><br>
+            <span>SSL 256 bits</span><span>Selo RA1000</span>
+          </div>
+        </div>
+      </div>
+      <div class="rodape-final">
+        <span>© 2026 TechnoStore Comércio Eletrônico de Computadores Ltda. Todos os direitos reservados.</span>
+        <div>
+          <span>Termos de Uso</span><span>Privacidade de Dados</span><span>Conformidade LGPD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="aviso" id="aviso"></div>
+</body>
+<script src="script.js"></script>
+<script src="pedidos.js"></script>
+</html>
