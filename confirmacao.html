@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Techno Store - Confirmação</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pedidos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-linha">
+      <a class="logo" href="index.html">
+        <span class="logo-icone">TS</span>
+        <span>
+          <strong>TECHNO STORE</strong>
+          <small>PARA VOCÊ, O MELHOR</small>
+        </span>
+      </a>
+      <form class="busca" onsubmit="return false">
+        <input type="text" placeholder="Buscar processadores, placas de vídeo, notebooks e periféricos...">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="topo-acoes">
+        <a class="carrinho" href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho <span class="contador" id="contador-carrinho">2</span></a>
+        <a class="usuario" href="login.html">
+          <span class="avatar">C</span>
+          <span>Olá, Cristiana<br><strong>Minha Conta</strong></span>
+        </a>
+      </div>
+    </div>
+    <nav class="container menu">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Computadores &amp; Notebooks</a>
+      <a href="catalogo.html">Peças &amp; Hardware</a>
+      <a href="catalogo.html">Periféricos</a>
+      <a href="catalogo.html">Promoções &amp; Ofertas <span class="selo selo-vermelho oferta">OFERTAS</span></a>
+    </nav>
+  </header>
+
+  <main class="container pd-pagina">
+    <section class="pd-caixa pd-etapas">
+      <div class="pd-etapa feita">
+        <span class="pd-etapa-num">1</span>
+        <div><small>CONCLUÍDO</small><strong>Carrinho</strong></div>
+      </div>
+      <div class="pd-etapa feita">
+        <span class="pd-etapa-num">2</span>
+        <div><small>CONCLUÍDO</small><strong>Identificação e Endereço</strong></div>
+      </div>
+      <div class="pd-etapa feita">
+        <span class="pd-etapa-num">3</span>
+        <div><small>CONCLUÍDO</small><strong>Pagamento</strong></div>
+      </div>
+      <div class="pd-etapa feita">
+        <span class="pd-etapa-num">4</span>
+        <div><small>FINALIZAÇÃO</small><strong>Confirmação</strong></div>
+      </div>
+    </section>
+
+    <section class="pd-caixa pd-sucesso">
+      <div class="pd-sucesso-icone"><i class="fa-solid fa-circle-check"></i></div>
+      <div class="pd-sucesso-texto">
+        <h1>Pedido Realizado com Sucesso!</h1>
+        <p>Obrigado pela preferência, <strong>Cristiana R. B. Moreira</strong>. Enviamos todos os detalhes do faturamento, link de rastreamento e Nota Fiscal Eletrônica (DANFE) para <strong>seu email</strong>.</p>
+      </div>
+      <strong class="pd-sucesso-numero">Pedido: #NX-84920</strong>
+    </section>
+
+    <section class="pd-caixa pd-compra">
+      <div class="pd-compra-topo">
+        <h2>Resumo da Compra</h2>
+        <span class="pd-pilula">2 Itens</span>
+      </div>
+
+      <div class="pd-linha-produto">
+        <div class="imagem pd-miniatura"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZbs5ZuTePmKq9LkqB0o3jY_HN1sZ8An9gVXFux0AuHg&s" alt="Processador AMD Ryzen 7"></div>
+        <h3>Processador AMD Ryzen 7 7800X3D 4.2GHz (5.0GHz Turbo) 8-Core 16-Threads AM5</h3>
+        <strong class="pd-valor">R$ 2.450,00</strong>
+      </div>
+      <div class="pd-linha-produto">
+        <div class="imagem pd-miniatura"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfWtZWZiq981cVihI2C1MyjEP1LuR7WpmjSaTe5_ciLw&s=10" alt="Memória Corsair Vengeance"></div>
+        <h3>Memória Corsair Vengeance RGB 32GB (2×16GB) DDR5 6000MHz CL30 Black</h3>
+        <div class="pd-valor">
+          <s>R$ 989,00</s>
+          <strong>R$ 890,00</strong>
+        </div>
+      </div>
+
+      <div class="pd-totais">
+        <div class="pd-totais-linha"><span>Subtotal dos produtos</span><strong>R$ 3.340,00</strong></div>
+        <div class="pd-totais-linha"><span>Frete (Nexus Express)</span><strong class="pd-verde">GRÁTIS</strong></div>
+        <div class="pd-totais-linha pd-verde"><span><i class="fa-regular fa-circle-check"></i> Desconto Pix (15%)</span><strong>- R$ 501,00</strong></div>
+        <div class="pd-totais-final"><span>Total:</span><strong>R$ 2.839,00</strong></div>
+      </div>
+
+      <a class="botao botao-azul pd-botao-largo" href="pedidos.html">Meus Pedidos</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-colunas">
+        <div>
+          <h4>TECHNO STORE</h4>
+          <p>Referência nacional em hardware premium, montagem de setups entusiastas de alto desempenho e periféricos para pro-gamers e profissionais da computação.</p>
+          <p>CNPJ: 42.108.990/0001-54<br>Av. Engenharia da Computação, 1024 - SP<br>atendimento@nexustech.com.br</p>
+        </div>
+        <div>
+          <h4>Departamentos</h4>
+          <ul>
+            <li>Processadores Intel &amp; AMD</li>
+            <li>Placas de Vídeo RTX &amp; Radeon</li>
+            <li>Placas-Mãe &amp; Memória RAM</li>
+            <li>Armazenamento NVMe &amp; SSD</li>
+            <li>Fontes Modulares &amp; Refrigeração</li>
+            <li>Monitores 144Hz a 360Hz</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ajuda &amp; Atendimento</h4>
+          <ul>
+            <li>Central de Atendimento ao Cliente</li>
+            <li>Política de Garantia &amp; RMA Direct</li>
+            <li>Prazos de Envio e Rastreamento</li>
+            <li>Trocas e Devoluções</li>
+            <li>Fale com o Suporte Técnico</li>
+            <li>Portal de Afiliados e Parcerias</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Segurança &amp; Pagamentos</h4>
+          <div class="caixa-pagamento">
+            <strong>Métodos de Pagamento</strong><br>
+            <span>PIX</span><span>Cartão até 12x</span><span>Boleto Bancário</span><span>Débito</span>
+          </div>
+          <div class="caixa-pagamento">
+            <strong>Certificados Seguros</strong><br>
+            <span>SSL 256 bits</span><span>Selo RA1000</span>
+          </div>
+        </div>
+      </div>
+      <div class="rodape-final">
+        <span>© 2026 TechnoStore Comércio Eletrônico de Computadores Ltda. Todos os direitos reservados.</span>
+        <div>
+          <span>Termos de Uso</span><span>Privacidade de Dados</span><span>Conformidade LGPD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="aviso" id="aviso"></div>
+</body>
+<script src="script.js"></script>
+<script src="pedidos.js"></script>
+</html>
