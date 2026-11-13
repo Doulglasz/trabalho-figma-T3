@@ -21,7 +21,6 @@ A Techno Store simula o caminho completo de uma compra online: da escolha do pro
 | `index.html` | Página inicial com destaques e ofertas |
 | `catalogo.html` | Lista de produtos com filtros e ordenação |
 | `produto.html` | Detalhes do produto, avaliações e cálculo de frete |
-| `login.html` | Tela de login |
 | `carrinho.html` | Carrinho com alteração de quantidade, remoção de itens, cupom e frete |
 | `pagamento.html` | Pagamento por Pix, débito, crédito ou boleto |
 | `confirmacao.html` | Confirmação do pedido |
@@ -32,7 +31,8 @@ A Techno Store simula o caminho completo de uma compra online: da escolha do pro
 - HTML
 - CSS
 - JavaScript
-- Figma (protótipo das telas)
+- Figma (prototipagem das telas)
+
 ## Como abrir
  
 Acesse o link do site acima, ou baixe o repositório e abra o arquivo `index.html` ou `login.html` no navegador.
