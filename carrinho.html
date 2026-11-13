@@ -129,7 +129,85 @@
             <h2 class="ct-subtitulo"><i class="fa-solid fa-tag"></i> Cupom Promocional</h2>
             <p class="ct-texto">Insira o código promocional para validar condições exclusivas para seu pedido.</p>
             <div class="ct-linha-campo">
-              <in
+              <input type="text" id="ct-cupom" placeholder="Digite seu cupom">
+              <button type="button" class="botao botao-azul" id="ct-aplicar">Aplicar</button>
+            </div>
+            <div class="ct-cupom-ativo" id="ct-cupom-ativo">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong>NEXUSPRO10</strong>
+                <p>Frete Express grátis aplicado ao pedido</p>
+              </div>
+              <span>ATIVO</span>
+            </div>
+          </section>
+
+          <section class="ct-caixa">
+            <div class="ct-subtitulo-linha">
+              <h2 class="ct-subtitulo"><i class="fa-solid fa-truck-fast"></i> Calcular Frete</h2>
+              <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei meu CEP</a>
+            </div>
+            <p class="ct-texto">Informe o CEP para ver o prazo e o valor da entrega.</p>
+            <div class="ct-linha-campo">
+              <input type="text" id="ct-cep" placeholder="00000-000" maxlength="9">
+              <button type="button" class="botao botao-azul" id="ct-calcular">Calcular</button>
+            </div>
+            <label class="ct-opcao">
+              <input type="radio" name="frete" value="express" checked>
+              <div>
+                <strong>Express Direct</strong>
+                <span>Entrega amanhã até 18h</span>
+              </div>
+              <div class="ct-opcao-preco" id="ct-express-preco"></div>
+            </label>
+            <label class="ct-opcao">
+              <input type="radio" name="frete" value="sedex">
+              <div>
+                <strong>Sedex</strong>
+                <span>2 a 3 dias úteis</span>
+              </div>
+              <div class="ct-opcao-preco"><strong>R$ 29,90</strong></div>
+            </label>
+          </section>
+        </div>
+      </div>
+
+      <aside class="ct-caixa">
+        <div class="ct-resumo-topo">
+          <h2>Resumo do Pedido</h2>
+          <i class="fa-solid fa-receipt"></i>
+        </div>
+
+        <div class="ct-linha"><span>Subtotal</span><strong id="ct-subtotal"></strong></div>
+        <div class="ct-linha"><span>Frete</span><div class="ct-frete" id="ct-frete"></div></div>
+
+        <div class="ct-total">
+          <div class="ct-total-linha"><span>Total</span><strong id="ct-total"></strong></div>
+          <div class="ct-total-pix"><span>No Pix com 15% de desconto</span><strong id="ct-pix"></strong></div>
+        </div>
+
+        <div class="ct-parcelado"><span>No cartão de crédito</span><strong id="ct-parcelas"></strong></div>
+
+        <a class="botao botao-escuro ct-continuar" id="ct-continuar" href="pagamento.html">Continuar</a>
+
+        <ul class="ct-beneficios">
+          <li><i class="fa-solid fa-shield-halved"></i> Compra 100% segura</li>
+          <li><i class="fa-solid fa-medal"></i> Garantia de 36 meses nos produtos</li>
+          <li><i class="fa-solid fa-rotate-left"></i> Devolução gratuita em até 7 dias</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-colunas">
+        <div>
+          <h4>TECHNO STORE</h4>
+          <p>Referência nacional em hardware premium, montagem de setups entusiastas de alto desempenho e periféricos para pro-gamers e profissionais da computação.</p>
+          <p>CNPJ: 42.108.990/0001-54<br>Av. Engenharia da Computação, 1024 - SP<br>atendimento@nexustech.com.br</p>
+        </div>
+        <div>
           <h4>Departamentos</h4>
           <ul>
             <li>Processadores Intel &amp; AMD</li>

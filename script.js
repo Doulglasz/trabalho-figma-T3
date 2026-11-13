@@ -1,4 +1,185 @@
-var totalCarrinho = 0;
+var urlImagem = "https://encrypted-tbn0.gstatic.com/images?q=tbn:";
+
+var produtos = {
+  "0": {
+    nome: "Placa de Vídeo ASUS TUF Gaming GeForce RTX 4070 Super OC Edition 12GB GDDR6X",
+    curto: "RTX 4070 Super TUF",
+    categoria: "Placa de Vídeo",
+    preco: 3899,
+    antigo: 4899,
+    imagens: [urlImagem + "ANd9GcQFQWc41G445RJ0vmTlZcCUZctfqBrZKe8WauanuJgnMw&s=10"]
+  },
+  "1": {
+    nome: "Placa de Vídeo ASUS TUF Gaming GeForce RTX 4070 Ti 12GB GDDR6X",
+    curto: "RTX 4070 Ti TUF",
+    categoria: "Placa de Vídeo",
+    preco: 5354.15,
+    antigo: 6299,
+    estoque: 12,
+    parcelas: "12x de R$ 524,91 sem juros",
+    imagens: [
+      urlImagem + "ANd9GcQFQWc41G445RJ0vmTlZcCUZctfqBrZKe8WauanuJgnMw&s=10",
+      urlImagem + "ANd9GcQAEO6YAcffgY2S5BPg7knUDL8O2gIyNgtMfF9Dn_Qi0Q&s=10",
+      urlImagem + "ANd9GcQhJjqTYUCW7oPGEcG0ugO1E3NY801FbNQuIIuK50j_6g&s=10"
+    ],
+    specs: [
+      ["Processador Gráfico", "NVIDIA GeForce RTX 4070 Ti"],
+      ["Núcleos CUDA", "7680 Cores"],
+      ["Capacidade de Memória", "12 GB"],
+      ["Tipo de Memória", "GDDR6X"],
+      ["Velocidade de Memória", "21 Gbps"],
+      ["Interface de Barramento", "192-bit"],
+      ["Padrão de Barramento", "PCI Express 4.0 16x"],
+      ["Consumo Máximo", "285W"],
+      ["Fonte Recomendada (PSU)", "700W ou superior"],
+      ["Tecnologias", "DLSS 3 e Ray Tracing"],
+      ["Resolução Máxima Digital", "7680 x 4320 (8K HDR @ 60Hz)"]
+    ]
+  },
+  "2": {
+    nome: "Processador AMD Ryzen 7 7800X3D 4.2GHz (5.0GHz Turbo) 8-Core 16-Threads AM5",
+    curto: "Ryzen 7 7800X3D",
+    categoria: "Processador",
+    preco: 3299,
+    antigo: 0,
+    estoque: 8,
+    parcelas: "10x de R$ 329,90 sem juros",
+    imagens: [urlImagem + "ANd9GcSZbs5ZuTePmKq9LkqB0o3jY_HN1sZ8An9gVXFux0AuHg&s"],
+    specs: [
+      ["Modelo", "AMD Ryzen 7 7800X3D"],
+      ["Núcleos", "8 Cores"],
+      ["Threads", "16 Threads"],
+      ["Clock Base", "4.2 GHz"],
+      ["Clock Máximo (Turbo)", "5.0 GHz"],
+      ["Cache L3", "96 MB (3D V-Cache)"],
+      ["TDP", "120W"],
+      ["Socket", "AM5"],
+      ["Memória Suportada", "DDR5"],
+      ["Gráficos Integrados", "AMD Radeon Graphics"],
+      ["Cooler", "Não incluso"]
+    ]
+  },
+  "3": {
+    nome: "Memória Corsair Vengeance RGB 32GB (2×16GB) DDR5 6000MHz CL30 Black",
+    curto: "Corsair Vengeance 32GB DDR5",
+    categoria: "Memória RAM",
+    preco: 899.9,
+    antigo: 1199,
+    estoque: 15,
+    parcelas: "8x de R$ 132,34 sem juros",
+    imagens: [urlImagem + "ANd9GcQfWtZWZiq981cVihI2C1MyjEP1LuR7WpmjSaTe5_ciLw&s=10"],
+    specs: [
+      ["Capacidade Total", "32 GB (2 x 16 GB)"],
+      ["Tipo de Memória", "DDR5"],
+      ["Velocidade", "6000 MHz"],
+      ["Latência", "CL30"],
+      ["Formato", "DIMM 288 pinos"],
+      ["Iluminação", "RGB"],
+      ["Cor", "Preto"],
+      ["Aplicação", "Desktop"]
+    ]
+  },
+  "4": {
+    nome: "SSD Kingston KC3000 2TB M.2 2280 PCIe 4.0 NVMe 7000MB/s",
+    curto: "SSD Kingston KC3000 2TB",
+    categoria: "Armazenamento",
+    preco: 1079.2,
+    antigo: 1349,
+    estoque: 24,
+    parcelas: "10x de R$ 126,96 sem juros",
+    imagens: [urlImagem + "ANd9GcRw06YM53uW47tAyobjyGhefE_Xfcig0dLGBsvoBs_1Zw&s=10"],
+    specs: [
+      ["Capacidade", "2 TB"],
+      ["Formato", "M.2 2280"],
+      ["Interface", "PCIe 4.0 x4 NVMe"],
+      ["Leitura Sequencial", "Até 7.000 MB/s"],
+      ["Gravação Sequencial", "Até 7.000 MB/s"],
+      ["Tipo de Memória", "NAND 3D TLC"],
+      ["Durabilidade", "2000 TBW"],
+      ["Garantia", "5 anos"]
+    ]
+  },
+  "5": {
+    nome: "Placa-Mãe ASUS ROG Strix B650E-F Gaming Wi-Fi, AMD AM5, ATX, DDR5",
+    curto: "ROG Strix B650E-F",
+    categoria: "Placa-mãe",
+    preco: 2124.15,
+    antigo: 2499,
+    estoque: 9,
+    parcelas: "10x de R$ 249,90 sem juros",
+    imagens: [urlImagem + "ANd9GcSQ1kjdqLQsMybhMAqlniXfY7OFgEjAY3Gwun6jjIkr6Q&s=10"],
+    specs: [
+      ["Chipset", "AMD B650"],
+      ["Socket", "AM5"],
+      ["Formato", "ATX"],
+      ["Slots de Memória", "4 x DDR5"],
+      ["Slot Gráfico", "PCI Express 5.0 x16"],
+      ["Armazenamento", "3 x M.2"],
+      ["Rede sem fio", "Wi-Fi 6E"],
+      ["Rede cabeada", "Ethernet 2.5 Gb"]
+    ]
+  },
+  "6": {
+    nome: "Fonte Corsair RM850x 850W, 80 Plus Gold, Totalmente Modular",
+    curto: "Corsair RM850x 850W",
+    categoria: "Fonte",
+    preco: 977.5,
+    antigo: 1150,
+    estoque: 6,
+    parcelas: "10x de R$ 115,00 sem juros",
+    imagens: [urlImagem + "ANd9GcRmHnAHkRhcOPOKHus2voxksh8gw10WDDXe5Y08BFG0nw&s=10"],
+    specs: [
+      ["Potência", "850W"],
+      ["Certificação", "80 Plus Gold"],
+      ["Modularidade", "Totalmente modular"],
+      ["Formato", "ATX"],
+      ["Ventoinha", "135 mm com modo Zero RPM"],
+      ["Capacitores", "105°C"],
+      ["Garantia", "10 anos"]
+    ]
+  },
+  "7": {
+    nome: "Fonte Corsair 750W 80 Plus Gold",
+    curto: "Fonte Corsair 750W Gold",
+    categoria: "Fonte",
+    preco: 649,
+    antigo: 0,
+    imagens: [urlImagem + "ANd9GcT3EDjfjSDDjF7e2NHa9VMBULMOlmSN49QO0wjMbCo8CA&s=10"]
+  },
+  "8": {
+    nome: "Suporte Anti-Sag Alumínio para Placa de Vídeo",
+    curto: "Suporte Anti-Sag Alumínio",
+    categoria: "Acessório",
+    preco: 69.9,
+    antigo: 0,
+    imagens: [urlImagem + "ANd9GcRKlvVmBXYdOvFXtM2BwFTnOJdXtiZ98vMPGhKrx8UQ8Q&s"]
+  }
+};
+
+function lerCarrinho() {
+  var guardado = localStorage.getItem("carrinho");
+  if (guardado == null) {
+    return [];
+  }
+  return JSON.parse(guardado);
+}
+
+function salvarCarrinho(lista) {
+  localStorage.setItem("carrinho", JSON.stringify(lista));
+}
+
+function atualizarContador() {
+  var contador = document.getElementById("contador-carrinho");
+  if (contador == null) {
+    return;
+  }
+  var lista = lerCarrinho();
+  var total = 0;
+  for (var i = 0; i < lista.length; i++) {
+    total = total + lista[i].qtd;
+  }
+  contador.textContent = total;
+}
 
 function mostrarAviso(texto) {
   var aviso = document.getElementById("aviso");
@@ -12,21 +193,44 @@ function mostrarAviso(texto) {
   }, 2500);
 }
 
-function adicionarAoCarrinho(quantidade) {
-  var contador = document.getElementById("contador-carrinho");
-  totalCarrinho = totalCarrinho + quantidade;
-  if (contador != null) {
-    contador.textContent = totalCarrinho;
+function adicionarAoCarrinho(quantidade, id) {
+  if (produtos[id] == undefined) {
+    return;
   }
-  mostrarAviso("Produto adicionado ao carrinho");
+  var lista = lerCarrinho();
+  var achou = false;
+  var texto = "Produto adicionado ao carrinho";
+
+  for (var i = 0; i < lista.length; i++) {
+    if (lista[i].id == id) {
+      achou = true;
+      lista[i].qtd = lista[i].qtd + quantidade;
+      if (lista[i].qtd > 12) {
+        lista[i].qtd = 12;
+        texto = "Quantidade máxima por pedido: 12";
+      }
+    }
+  }
+
+  if (!achou) {
+    lista.push({ id: id, qtd: quantidade });
+  }
+
+  salvarCarrinho(lista);
+  atualizarContador();
+  mostrarAviso(texto);
 }
 
 var botoesCarrinho = document.querySelectorAll(".botao-carrinho");
 for (var i = 0; i < botoesCarrinho.length; i++) {
   botoesCarrinho[i].addEventListener("click", function () {
-    adicionarAoCarrinho(1);
+    if (this.dataset.id != undefined) {
+      adicionarAoCarrinho(1, this.dataset.id);
+    }
   });
 }
+
+atualizarContador();
 
 var botoesFavorito = document.querySelectorAll(".favorito");
 for (var j = 0; j < botoesFavorito.length; j++) {
@@ -60,6 +264,84 @@ if (formLogin != null) {
     }
     erro.textContent = "";
     window.location.href = "index.html";
+  });
+}
+
+var formCadastro = document.getElementById("form-cadastro");
+if (formCadastro != null) {
+  var cadNome = document.getElementById("nome");
+  var cadEmail = document.getElementById("email");
+  var cadCpf = document.getElementById("cpf");
+  var cadSenha = document.getElementById("senha");
+  var cadConfirmar = document.getElementById("confirmar-senha");
+  var cadMostrar = document.getElementById("mostrar-senhas");
+  var cadTermos = document.getElementById("termos");
+  var cadErro = document.getElementById("erro-cadastro");
+
+  cadCpf.addEventListener("input", function () {
+    var d = cadCpf.value.replace(/\D/g, "").slice(0, 11);
+    if (d.length > 9) {
+      d = d.slice(0, 3) + "." + d.slice(3, 6) + "." + d.slice(6, 9) + "-" + d.slice(9);
+    } else if (d.length > 6) {
+      d = d.slice(0, 3) + "." + d.slice(3, 6) + "." + d.slice(6);
+    } else if (d.length > 3) {
+      d = d.slice(0, 3) + "." + d.slice(3);
+    }
+    cadCpf.value = d;
+  });
+
+  cadMostrar.addEventListener("change", function () {
+    if (cadMostrar.checked) {
+      cadSenha.type = "text";
+      cadConfirmar.type = "text";
+    } else {
+      cadSenha.type = "password";
+      cadConfirmar.type = "password";
+    }
+  });
+
+  formCadastro.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    var nome = cadNome.value.trim();
+    var email = cadEmail.value.trim();
+    var cpf = cadCpf.value.replace(/\D/g, "");
+
+    if (nome.length < 3) {
+      cadErro.textContent = "Digite seu nome completo.";
+      cadNome.focus();
+      return;
+    }
+    if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+      cadErro.textContent = "Digite um e-mail válido.";
+      cadEmail.focus();
+      return;
+    }
+    if (cpf.length != 11) {
+      cadErro.textContent = "Digite um CPF com 11 números.";
+      cadCpf.focus();
+      return;
+    }
+    if (cadSenha.value.length < 6) {
+      cadErro.textContent = "A senha precisa ter pelo menos 6 caracteres.";
+      cadSenha.focus();
+      return;
+    }
+    if (cadSenha.value != cadConfirmar.value) {
+      cadErro.textContent = "As senhas não são iguais.";
+      cadConfirmar.focus();
+      return;
+    }
+    if (!cadTermos.checked) {
+      cadErro.textContent = "Aceite os termos de uso para continuar.";
+      return;
+    }
+
+    cadErro.textContent = "";
+    localStorage.setItem("usuario", JSON.stringify({ nome: nome, email: email }));
+    mostrarAviso("Conta criada com sucesso!");
+    setTimeout(function () {
+      window.location.href = "login.html";
+    }, 1500);
   });
 }
 
@@ -161,7 +443,67 @@ if (gradeCatalogo != null) {
 }
 
 var imagemPrincipal = document.getElementById("imagem-principal");
+
+function mostrarProduto(id) {
+  var produto = produtos[id];
+
+  document.title = produto.nome + " - Techno Store";
+  document.querySelector(".produto-info h1").textContent = produto.nome;
+
+  imagemPrincipal.src = produto.imagens[0];
+  imagemPrincipal.alt = produto.curto;
+
+  var botoesMiniatura = document.querySelectorAll(".miniaturas button");
+  for (var i = 0; i < botoesMiniatura.length; i++) {
+    if (produto.imagens[i] == undefined) {
+      botoesMiniatura[i].style.display = "none";
+    } else {
+      botoesMiniatura[i].querySelector("img").src = produto.imagens[i];
+      botoesMiniatura[i].querySelector("img").alt = "Vista " + (i + 1);
+    }
+  }
+
+  var precoAntigo = document.querySelector(".produto-info .preco-antigo");
+  if (produto.antigo > 0) {
+    precoAntigo.innerHTML = "De " + formatarReais(produto.antigo) + ' <span class="selo selo-vermelho">Economize ' + formatarReais(produto.antigo - produto.preco) + "</span>";
+  } else {
+    precoAntigo.style.display = "none";
+  }
+
+  document.querySelector(".produto-info .caixa-preco .preco-atual").innerHTML = formatarReais(produto.preco) + " <small>À VISTA NO PIX</small>";
+  document.querySelector(".produto-info .caixa-preco p").textContent = "No cartão de crédito em até " + produto.parcelas;
+  document.querySelector(".estoque").textContent = "Em Estoque: " + produto.estoque + " unidades no CD São Paulo - Envio em até 24h";
+
+  var tabela = document.querySelector(".tabela-specs");
+  tabela.innerHTML = "";
+  for (var j = 0; j < produto.specs.length; j++) {
+    var linha = document.createElement("div");
+    var nomeSpec = document.createElement("span");
+    var valorSpec = document.createElement("strong");
+    nomeSpec.textContent = produto.specs[j][0];
+    valorSpec.textContent = produto.specs[j][1];
+    linha.appendChild(nomeSpec);
+    linha.appendChild(valorSpec);
+    tabela.appendChild(linha);
+  }
+
+  var itemCombo = document.querySelector(".combo-item");
+  itemCombo.innerHTML = '<div class="imagem"><img src="' + produto.imagens[0] + '" alt="' + produto.curto + '"></div>' + produto.curto + "<br><strong>" + formatarReais(produto.preco) + "</strong>";
+
+  var somaCombo = produto.preco + produtos["7"].preco + produtos["8"].preco;
+  document.querySelector(".combo-total .preco-atual").textContent = formatarReais(somaCombo * 0.95);
+  document.querySelector(".combo-total .preco-antigo").textContent = "De " + formatarReais(somaCombo);
+}
+
 if (imagemPrincipal != null) {
+  var idProduto = new URLSearchParams(window.location.search).get("id");
+  if (idProduto == null || produtos[idProduto] == undefined || produtos[idProduto].specs == undefined) {
+    idProduto = "0";
+  }
+  if (idProduto != "0") {
+    mostrarProduto(idProduto);
+  }
+
   var miniaturas = document.querySelectorAll(".miniaturas button");
   for (var s = 0; s < miniaturas.length; s++) {
     miniaturas[s].addEventListener("click", function () {
@@ -191,11 +533,17 @@ if (imagemPrincipal != null) {
   });
 
   document.getElementById("adicionar").addEventListener("click", function () {
-    adicionarAoCarrinho(quantidade);
+    adicionarAoCarrinho(quantidade, idProduto);
   });
 
   document.getElementById("comprar-agora").addEventListener("click", function () {
-    mostrarAviso("Compra iniciada");
+    adicionarAoCarrinho(quantidade, idProduto);
+  });
+
+  document.getElementById("comprar-combo").addEventListener("click", function () {
+    adicionarAoCarrinho(1, idProduto);
+    adicionarAoCarrinho(1, "7");
+    adicionarAoCarrinho(1, "8");
   });
 
   document.getElementById("calcular-frete").addEventListener("click", function () {

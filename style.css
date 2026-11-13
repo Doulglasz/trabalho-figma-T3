@@ -2172,3 +2172,36 @@ ul {
     font-size: 18px;
   }
 }
+
+.campo-duplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.pagina-cadastro .login-form {
+  padding: 32px 48px;
+}
+
+.pagina-cadastro .login-form h1 {
+  margin-bottom: 18px;
+}
+
+.pagina-cadastro .campo {
+  margin-bottom: 12px;
+}
+
+.pagina-cadastro .lembrar {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 560px) {
+  .campo-duplo {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .pagina-cadastro .login-form {
+    padding: 28px 20px;
+  }
+}
